@@ -5,19 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Color Counter</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
+  <div id="particles-js"></div>
+  
   <div class="container">
-    <div class="left-red" id="left-red" style="width:50%;"></div>
-    <div class="right-blue" id="right-blue" style="width:50%;"></div>
+    <div class="left-red" id="left-red"></div>
+    <div class="right-blue" id="right-blue"></div>
     <div class="counter-box">
       <h1 id="count">0</h1>
     </div>
   </div>
 
-  <audio id="punchSound" src="YOUR_SELECTED_PUNCH_SOUND.mp3"></audio>
+  <!-- Suara pukulan -->
+  <audio id="punchSound" src="punch.mp3"></audio>
 
+  <!-- Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
