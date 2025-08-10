@@ -1,27 +1,73 @@
-
-  body {
-    margin: 0; padding: 0; height: 100vh; overflow: hidden;
-    background: #222;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
     font-family: Arial, sans-serif;
-  }
-  .container { position: relative; width: 100%; height: 100%; }
-  .left-red, .right-blue {
-    position: absolute; top: 0; height: 100%;
+    background: #111;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.left-red, .right-blue {
+    position: absolute;
+    top: 0;
+    height: 100%;
     transition: width 0.3s ease;
-  }
-  .left-red { left: 0; background: red; }
-  .right-blue { right: 0; background: blue; }
-  .counter-box {
-    position: absolute; top: 50%; left: 50%;
+}
+
+.left-red {
+    left: 0;
+    background: linear-gradient(135deg, #ff0000, #ff5f5f);
+    box-shadow: inset -5px 0 20px rgba(255,255,255,0.2);
+    animation: waveRed 5s infinite linear;
+}
+
+.right-blue {
+    right: 0;
+    background: linear-gradient(135deg, #0000ff, #5f5fff);
+    box-shadow: inset 5px 0 20px rgba(255,255,255,0.2);
+    animation: waveBlue 5s infinite linear;
+}
+
+@keyframes waveRed {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 0; }
+}
+
+@keyframes waveBlue {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 0; }
+}
+
+.counter-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(224, 224, 224, 0.6);
+    background: rgba(234, 234, 234, 0.7);
     padding: 20px 40px;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.7);
-  }
-  #count {
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
+}
+
+#count {
     margin: 0;
-    font-size: 4rem;
+    font-size: 5rem;
     color: #fff;
-    text-shadow: 0 0 8px #fff;
-  }
+    text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
